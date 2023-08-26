@@ -2,7 +2,7 @@ import css from './ContactForm.module.css';
 
 import { useSelector, useDispatch } from 'react-redux';
 import { getContacts } from 'redux/users/selectors';
-import { addContact } from 'redux/users/slice';
+// import { addContact } from 'redux/users/slice';
 import { useRef } from 'react';
 // import { nanoid } from 'nanoid';
 import { addContactFromDB, fetchContacts } from 'redux/users/operations';
@@ -39,6 +39,7 @@ function ContactForm() {
           (contactNameRef.current.value = ''),
           (contactNumberRef.current.value = '')
         );
+    dispatch(fetchContacts());
   };
   return (
     <form className={css.formEditor}>
